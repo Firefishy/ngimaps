@@ -2,13 +2,15 @@ version: "3.9"
 services:
   mapimages:
     build: ./mapimages
-    volumes:
-      - "./tiffs:/usr/share/nginx/html"
+#    volumes:
+#       - "/Users/grant/code/osm/za-25cm:/usr/share/nginx/html"
 
   tiler:
     build: ./tiler
     environment:
-      - "FIFTYK_MOSAIC_URL=http://mapimages/50k/mosaic-internal.json"
+#      - "FIFTYK_MOSAIC_URL=https://grant.dev.openstreetmap.org/os-openmap-local-202210-cog-experiment/mosaic.json"
+#      - "FIFTYK_MOSAIC_URL=http://mapimages/mosaic-internal.json"
+       - "FIFTYK_MOSAIC_URL=https://grant.dev.openstreetmap.org/za-25cm/mosaic.json"
     depends_on:
       - mapimages
 
@@ -18,8 +20,8 @@ services:
       - "./cache:/mapproxy/cache_data"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080"]
-      interval: 30s
-      timeout: 10s
+      interval: 15s
+      timeout: 5s
       retries: 3
     depends_on:
       - tiler
@@ -41,7 +43,7 @@ services:
     volumes:
       - "./cache:/cache"
     depends_on:
-      seed:
-        condition: service_completed_successfully
+#      seed:
+#        condition: service_completed_successfully
       mapproxy:
         condition: service_healthy
