@@ -2,7 +2,7 @@ FROM python:3.11-bullseye
 
 RUN set -eux; \
   apt-get update; \
-  apt-get install -y --no-install-recommends libgdal-dev; \
+  apt-get install -y --no-install-recommends libgdal-dev jq; \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR /code
@@ -22,7 +22,7 @@ ENV GDAL_HTTP_MAX_RETRY 3
 ENV GDAL_HTTP_RETRY_DELAY 0.2
 
 # uvicorn config
-ENV WEB_CONCURRENCY 4
+ENV WEB_CONCURRENCY 6
 
 COPY ngi-tiler.py /code/
 
