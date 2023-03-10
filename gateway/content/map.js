@@ -18,7 +18,7 @@ function createMap(divName) {
 
   var defaultLayer = L.tileLayer('/tiles/50k/{z}/{x}/{y}.png', {
     attribution: 'State Copyright &copy; 2004&ndash;2019 <a href="http://www.ngi.gov.za/">Chief Directorate: National Geo-spatial Information</a>',
-    maxZoom: 15
+    maxZoom: 21
   })
   layers.addBaseLayer(defaultLayer, "CDNGI Mapping 1:50k")
   defaultLayer.addTo(map)

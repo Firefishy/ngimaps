@@ -42,3 +42,4 @@ sources:
 grids:
     xyz:
         base: GLOBAL_WEBMERCATOR
+        num_levels: 22
