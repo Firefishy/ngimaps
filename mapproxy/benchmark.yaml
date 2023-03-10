@@ -1,0 +1,15 @@
+seeds:
+  cache_50k:
+    caches: ['cache_50k']
+    coverages: ['western_cape_extract']
+    levels:
+      from: 0
+      to: 15
+    # Force regeneration of tiles
+    refresh_before:
+      minutes: 0
+
+coverages:
+  western_cape_extract:
+    bbox: [18.25, -34.5, 18.98035, -33.70656]
+    bbox_srs: EPSG:4326
