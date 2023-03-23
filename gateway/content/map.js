@@ -17,10 +17,10 @@ function createMap(divName) {
   var layers = L.control.layers(null, null, {collapsed:false}).addTo(map);
 
   var defaultLayer = L.tileLayer('/tiles/50k/{z}/{x}/{y}.png', {
-    attribution: 'State Copyright &copy; 2004&ndash;2019 <a href="http://www.ngi.gov.za/">Chief Directorate: National Geo-spatial Information</a>',
+    attribution: 'State Copyright &copy; 2017&ndash;2023 <a href="http://www.ngi.gov.za/">Chief Directorate: National Geo-spatial Information</a>',
     maxZoom: 21
   })
-  layers.addBaseLayer(defaultLayer, "CDNGI Mapping 1:50k")
+  layers.addBaseLayer(defaultLayer, "CDNGI Aerial 1:10k")
   defaultLayer.addTo(map)
 
   // Add OpenStreetMap layer

@@ -28,7 +28,7 @@ def PathParams(
 mosaic = MosaicTilerFactory(
   path_dependency=PathParams,
   layer_dependency=Defaults,
-  dataset_dependency=lambda: {"resampling_method": "lanczos"},
+  dataset_dependency=Defaults,
   process_dependency=Defaults,
   render_dependency=Defaults,
   colormap_dependency=Defaults

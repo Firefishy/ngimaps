@@ -15,7 +15,7 @@ caches:
     cache:
       type: file
       directory_layout: tms
-    request_format: image/png
+    request_format: image/webp
     downscale_tiles: 1
     cache_rescaled_tiles: true
     meta_size: [1, 1]
@@ -24,7 +24,7 @@ caches:
 sources:
   tms_50k:
     type: tile
-    url: http://tiler/tiler/tiles/%(z)s/%(x)s/%(y)s.png?pixel_selection=highest&layer=50k
+    url: http://tiler/tiler/tiles/%(z)s/%(x)s/%(y)s.webp?pixel_selection=highest&layer=50k
     grid: xyz
     coverage:
       bbox: [16.25, -34.85, 33.0, -22.0]
