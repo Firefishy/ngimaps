@@ -26,12 +26,7 @@ def PathParams(
     return layerUrls[layer]
 
 mosaic = MosaicTilerFactory(
-  path_dependency=PathParams,
-  layer_dependency=Defaults,
-  dataset_dependency=Defaults,
-  process_dependency=Defaults,
-  render_dependency=Defaults,
-  colormap_dependency=Defaults
+  path_dependency=PathParams
 )
 app.include_router(mosaic.router, prefix="/tiler", tags=["Tiles"])
 add_exception_handlers(app, DEFAULT_STATUS_CODES)

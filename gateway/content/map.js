@@ -16,7 +16,7 @@ function createMap(divName) {
   // Create a layer switcher
   var layers = L.control.layers(null, null, {collapsed:false}).addTo(map);
 
-  var defaultLayer = L.tileLayer('/tiles/50k/{z}/{x}/{y}.png', {
+  var defaultLayer = L.tileLayer('/tiles/50k/{z}/{x}/{y}.jpeg', {
     attribution: 'State Copyright &copy; 2017&ndash;2023 <a href="http://www.ngi.gov.za/">Chief Directorate: National Geo-spatial Information</a>',
     maxZoom: 21
   })
